@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialCart = {
     iscart : false,
+    Notification : null,
 }
 
 const cartSlicer = createSlice({
@@ -10,6 +11,18 @@ const cartSlicer = createSlice({
     reducers : {
         showCart (state){
             state.iscart = !state.iscart
+        },
+        loading (state,action){
+            if(action.payload){
+
+                state.Notification = {
+                    status : action.payload.status,
+                    title : action.payload.title,
+                    message : action.payload.message,
+                }
+            }else{
+                state.Notification = null
+            }
         }
     }
 })
