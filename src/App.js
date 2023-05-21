@@ -45,7 +45,7 @@ function App() {
           message : ' data saved!'
         }))
         setTimeout(()=>{
-          dispatch(cartSlicerAction.loading(null))
+          dispatch(cartSlicerAction.loading())
         },2000)
       }
      
